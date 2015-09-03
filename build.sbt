@@ -30,7 +30,7 @@ lazy val library = crossProject
   ).jsSettings(
     name := "libJS",
     scalaJSStage in Global := FastOptStage, // to use Node.js or PhantomJS for tests
-    jsDependencies += RuntimeDOM            // to use PhantomJS for tests
+    jsDependencies in Test += RuntimeDOM    // to use PhantomJS for tests
   ).jvmSettings(
     name := "libJVM"
     // JVM-specific settings here
